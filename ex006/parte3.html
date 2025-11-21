@@ -11,16 +11,17 @@
     <label>País:</label>
     <input type="text" name="txtpais" id="txtpais">
     <input type="button" value="Descobrir" onclick="descobrir()">
-    <div id="res">
+    <div id="res"></div>
 
-    </div>
     <script>
         function descobrir(){
-            var txtp = window.document.querySelector('input#txtpais')
-            var res = window.document.querySelector('div#res')
-            var desc = String(txtp.value)
+            var txtp = window.document.querySelector('#txtpais')
+            var res = window.document.querySelector('#res')
+            var desc = txtp.value.trim()
+
             res.innerHTML = `<p>Você está morando no(a) <strong>${desc}</strong>.</p>`
-            if (txtp = 'Brasil'){
+
+            if (desc.toLowerCase() === "brasil"){
                 res.innerHTML += '<p>Você é Brasileiro!</p>'
             } else {
                 res.innerHTML += '<p>Você é Estrangeiro!</p>'
